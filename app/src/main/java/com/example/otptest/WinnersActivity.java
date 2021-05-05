@@ -90,7 +90,7 @@ public class WinnersActivity extends AppCompatActivity {
                 if(length == 3)
                 {
                     Winner w = new Winner(winner[1], winner[2], winner[0], winner[3], selfies[winnersCounter]);
-                    Log.d("WinnersT", w.printCompetitor());
+                    Log.d("WinnersT", w.print());
                     winnersList.add(w);
 
                     length = 0;

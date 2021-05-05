@@ -1,4 +1,15 @@
 package com.example.otptest;
 
-public class Human {
+import android.graphics.Bitmap;
+
+import java.util.function.DoubleToIntFunction;
+
+public interface Human {
+    String getVotesNumber();
+    String getFirstName();
+    String getLastName();
+    String getClassName();
+    Bitmap getBitmap();
+
+    public String print();
 }

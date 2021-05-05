@@ -2,7 +2,7 @@ package com.example.otptest;
 
 import android.graphics.Bitmap;
 
-public class Competitor {
+public class Competitor implements Human{
     private String FirstName;
     private String LastName;
     private String ClassName;
@@ -30,6 +30,6 @@ public class Competitor {
 
     public void setId(String id) { Id = id; }
 
-    public String printCompetitor() { return "FN: " + this.FirstName + ", LN: " + this.LastName + ", C: " + this.ClassName + ", I: " + this.Id + ", VN: " + this.VotesNumber;}
+    public String print() { return "FN: " + this.FirstName + ", LN: " + this.LastName + ", C: " + this.ClassName + ", I: " + this.Id + ", VN: " + this.VotesNumber;}
 }
 
