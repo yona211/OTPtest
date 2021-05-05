@@ -18,6 +18,12 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
     }
 
+    /**
+     * The function is making the menu.
+     *
+     * @param menu this is the menu i'v build.
+     * @return true.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -25,6 +31,13 @@ public class StartActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * The function is for when you selected item in the menu,
+     * it will do what it meant to do.
+     *
+     * @param item it's the item you choose in the menu/
+     * @return true.
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);

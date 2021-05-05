@@ -122,6 +122,11 @@ public class VerifyOTPActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * This function is to make the input EditText for the OTP to be
+     * followed by each other.
+     */
     private void setupOTPInputs() {
         etCode1.addTextChangedListener(new TextWatcher() {
             @Override

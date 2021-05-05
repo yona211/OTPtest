@@ -36,7 +36,6 @@ public class ServerConnectionService extends Service {
     boolean isRun;
     int lifeTime;
 
-    // TODO check if you need all this functions
     private final IBinder binder = new LocalBinder();
     public class LocalBinder extends Binder {
         ServerConnectionService getService() {
@@ -47,6 +46,7 @@ public class ServerConnectionService extends Service {
     public IBinder onBind(Intent intent) {
         return binder;
     }
+
 
     class connectSocket implements Runnable {
         @Override
@@ -71,6 +71,16 @@ public class ServerConnectionService extends Service {
         }
     }
 
+    /**
+     * This function is the actual way we can talk with the server.
+     * It's make an object of the connectSocket class witch is a class that make the socket level connection
+     * with the server, and send the 'msgToSend' and save what the server return's.
+     * After that we wait 1S till the function return the 'serverReturns'.
+     *
+     *
+     * @param msgToSend is a String that the function get with what do tou want to get from the server.
+     * @return 'serverReturns', this is a string with all the information we want our server to send us.
+     */
     public String getServerReturns(String msgToSend) {
         // TODO Make this function more efficient
         this.msgToSend = msgToSend;
@@ -96,6 +106,9 @@ public class ServerConnectionService extends Service {
 
     }
 
+    /**
+     * Destroying the server sockets connection and the service.
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();
