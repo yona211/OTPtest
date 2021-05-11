@@ -2,7 +2,7 @@ package com.example.otptest;
 
 import android.graphics.Bitmap;
 
-public class Winner implements Human{
+public class Winner /*implements Human*/{
     private String FirstName;
     private String LastName;
     private String ClassName;
@@ -18,17 +18,11 @@ public class Winner implements Human{
         this.Bitmap = Bitmap;
     }
 
-    @Override
     public String getVotesNumber() { return VotesNumber; }
-    @Override
     public String getFirstName() { return FirstName; }
-    @Override
     public String getLastName() { return LastName; }
-    @Override
     public String getClassName() { return ClassName; }
-    @Override
     public Bitmap getBitmap() { return Bitmap; }
-    @Override
     public String print() { return "FN: " + this.FirstName + ", LN: " + this.LastName + ", C: " + this.ClassName + ", VN: " + this.VotesNumber;}
 
 }

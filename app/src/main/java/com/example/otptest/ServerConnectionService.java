@@ -51,9 +51,8 @@ public class ServerConnectionService extends Service {
     class connectSocket implements Runnable {
         @Override
         public void run() {
-            SocketAddress socketAddress = new InetSocketAddress("192.168.1.13", 5555);
+            SocketAddress socketAddress = new InetSocketAddress("192.168.1.12", 5555);
             try {
-                // TODO Check if you really need to close: 'dis', 's', 'dos', 'disR', 'br'
                 s.connect(socketAddress);
                 dos = new DataOutputStream(s.getOutputStream());
                 dos.writeUTF(msgToSend);

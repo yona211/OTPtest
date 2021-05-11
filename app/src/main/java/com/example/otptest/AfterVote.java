@@ -49,11 +49,17 @@ public class AfterVote extends AppCompatActivity {
         }
         else  if(id==R.id.action_exit)
         {
-            finish();
-            System.exit(0);
+            finishAffinity(); // Close all activities.
+            System.exit(0);  // closing files, releasing resources.
         }
         return true;
     }
+
+    /**
+     * This override function is to disable the Back Button on this activity.
+     */
+    @Override
+    public void onBackPressed(){}
 
     protected void onDestroy(){
         Process.killProcess(Process.myPid());

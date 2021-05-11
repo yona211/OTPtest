@@ -168,9 +168,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    protected void onDestroy(){
-        Process.killProcess(Process.myPid());
-        super.onDestroy();
-    }
+    /**
+     * This override function is to disable the Back Button on this activity.
+     */
+    @Override
+    public void onBackPressed(){}
+
 
 }

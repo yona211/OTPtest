@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Process;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -55,14 +56,10 @@ public class StartActivity extends AppCompatActivity {
         }
         else  if(id==R.id.action_exit)
         {
-            finish();
-            System.exit(0);
+            finishAffinity(); // Close all activities.
+            System.exit(0);  // closing files, releasing resources.
         }
         return true;
     }
 
-    protected void onDestroy(){
-        Process.killProcess(Process.myPid());
-        super.onDestroy();
-    }
 }

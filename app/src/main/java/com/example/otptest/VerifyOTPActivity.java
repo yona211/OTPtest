@@ -220,5 +220,11 @@ public class VerifyOTPActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This override function is to disable the Back Button on this activity.
+     */
+    @Override
+    public void onBackPressed(){}
+
 
 }

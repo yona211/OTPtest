@@ -119,8 +119,5 @@ public class SendOTPActivity extends AppCompatActivity implements View.OnClickLi
             mBound = false;
         }
     };
-    protected void onDestroy(){
-        Process.killProcess(Process.myPid());
-        super.onDestroy();
-    }
+
 }
