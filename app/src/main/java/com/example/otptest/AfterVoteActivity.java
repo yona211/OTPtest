@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.os.Process;
 
-public class AfterVote extends AppCompatActivity {
+public class AfterVoteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class AfterVote extends AppCompatActivity {
 
         if(id==R.id.action_home_page)
         {
-            Intent intent = new Intent(AfterVote.this, StartActivity.class);
+            Intent intent = new Intent(AfterVoteActivity.this, StartActivity.class);
             startActivity(intent);
         }
         else  if(id==R.id.action_exit)

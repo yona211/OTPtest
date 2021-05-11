@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.Process;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +22,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class ChoosingActivity extends AppCompatActivity implements View.OnClickListener{
 
     Dialog d;
     Button btnVote, btnBack;
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_choosing);
 
         lv = (ListView)findViewById(R.id.lv);
 
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String msgToSend = "FIND " + Id;
 
         // Set up the connection with the server
-        intent2 = new Intent(MainActivity.this, ServerConnectionService.class);
+        intent2 = new Intent(ChoosingActivity.this, ServerConnectionService.class);
         bindService(intent2, connection, Context.BIND_AUTO_CREATE);
 
 
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
-        competitorAdapter = new CompetitorAdapter(MainActivity.this, 0, 0, competitorsList);
+        competitorAdapter = new CompetitorAdapter(ChoosingActivity.this, 0, 0, competitorsList);
         lv.setAdapter(competitorAdapter);
     }
 
@@ -163,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             s2 = String.valueOf(mService.getServerReturns(msgToSend));
             Log.d("Voting", "connection: onServiceConnected: s2: " + s2);
             unbindService(connection);
-            Intent endIntent = new Intent(MainActivity.this, AfterVote.class);
+            Intent endIntent = new Intent(ChoosingActivity.this, AfterVoteActivity.class);
             startActivity(endIntent);
         }
     }
