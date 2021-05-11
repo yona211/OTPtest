@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="את/ה צריכ/ה לבחור מתמודד.\nאי אפשר לחזור למסך הבית עד לבחירה."
         android:textColor="@color/black"
