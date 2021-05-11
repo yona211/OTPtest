@@ -104,6 +104,9 @@ public class SendOTPActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    /**
+     * This is how we connect with the ServerServiceConnection.
+     */
     private ServiceConnection connection = new ServiceConnection() {
 
         @Override

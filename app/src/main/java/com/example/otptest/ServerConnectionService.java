@@ -81,7 +81,6 @@ public class ServerConnectionService extends Service {
      * @return 'serverReturns', this is a string with all the information we want our server to send us.
      */
     public String getServerReturns(String msgToSend) {
-        // TODO Make this function more efficient
         this.msgToSend = msgToSend;
         isRun = true;
         lifeTime = 2;
