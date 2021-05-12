@@ -46,6 +46,8 @@ public class SendOTPActivity extends AppCompatActivity implements View.OnClickLi
 
         intent = new Intent(SendOTPActivity.this, ServerConnectionService.class);
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
+
+        
     }
 
 
