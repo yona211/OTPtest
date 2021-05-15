@@ -50,13 +50,11 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
         setupOTPInputs();
 
-        // TODO Add an option for reSend the OTP
         verificationId = getIntent().getStringExtra("verificationId");
         btnVerify = (Button)findViewById(R.id.btnVerify);
         btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Clear and give another chance if someone enter wrong pass
                 if(etCode1.getText().toString().trim().isEmpty() || etCode2.getText().toString().trim().isEmpty() || etCode3.getText().toString().trim().isEmpty() || etCode4.getText().toString().trim().isEmpty() || etCode5.getText().toString().trim().isEmpty() || etCode6.getText().toString().trim().isEmpty()) {
                     Toast.makeText(VerifyOTPActivity.this, "Please enter valid code", Toast.LENGTH_LONG).show();
                     return;
@@ -69,7 +67,6 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                 etCode4.getText().toString() +
                                 etCode5.getText().toString() +
                                 etCode6.getText().toString();
-                // TODO Make the OTP verification part more efficient with more functions and more
                 Log.d("OTPErrors", "onClick verify: code: " + code);
                 if(verificationId != null) {
                     Log.d("OTPErrors", "onClick verify: verificationId:  " + verificationId);
@@ -142,63 +139,39 @@ public class VerifyOTPActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if(!s.toString().trim().isEmpty()) {
-                    etCode2.requestFocus();
-                }
-            }
-
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) { if(!s.toString().trim().isEmpty()) { etCode2.requestFocus(); } }
             @Override
-            public void afterTextChanged(Editable editable) { }
-        });
+            public void afterTextChanged(Editable editable) { }});
         etCode2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if(!s.toString().trim().isEmpty()) { etCode3.requestFocus(); }
-            }
-
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) { if(!s.toString().trim().isEmpty()) { etCode3.requestFocus(); } }
             @Override
-            public void afterTextChanged(Editable editable) { }
-        });
+            public void afterTextChanged(Editable editable) { }});
         etCode3.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if(!s.toString().trim().isEmpty()) { etCode4.requestFocus(); }
-            }
-
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) { if(!s.toString().trim().isEmpty()) { etCode4.requestFocus(); } }
             @Override
-            public void afterTextChanged(Editable editable) { }
-        });
+            public void afterTextChanged(Editable editable) { }});
         etCode4.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-
             @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if(!s.toString().trim().isEmpty()) { etCode5.requestFocus(); }
-            }
-
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) { if(!s.toString().trim().isEmpty()) { etCode5.requestFocus(); } }
             @Override
-            public void afterTextChanged(Editable editable) { }
-        });
+            public void afterTextChanged(Editable editable) { }});
         etCode5.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-
             @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if(!s.toString().trim().isEmpty()) { etCode6.requestFocus(); }
-            }
-
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) { if(!s.toString().trim().isEmpty()) { etCode6.requestFocus(); } }
             @Override
-            public void afterTextChanged(Editable editable) { }
-        });
+            public void afterTextChanged(Editable editable) { }});
     }
 
     /**
