@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:divider="?android:dividerHorizontal"
     android:showDividers="middle">
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,12 +16,10 @@
         android:text="את/ה צריכ/ה לבחור מתמודד.\nאי אפשר לחזור למסך הבית עד לבחירה."
         android:textColor="@color/black"
         android:textSize="20dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,5 +28,4 @@
             android:dividerHeight="1dp">
         </ListView>
     </LinearLayout>
-
 </LinearLayout>

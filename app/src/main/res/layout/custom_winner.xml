@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <ImageView
         android:id="@+id/ivCompetitorSelfie"
         android:layout_width="50dp"
@@ -14,7 +13,6 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-
     <TextView
         android:id="@+id/tvFirstName"
         android:layout_width="wrap_content"
@@ -25,7 +23,6 @@
         android:text="Yonatan"
         app:layout_constraintEnd_toStartOf="@+id/ivCompetitorSelfie"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tvLastName"
         android:layout_width="wrap_content"
@@ -36,7 +33,6 @@
         android:text="Bardin"
         app:layout_constraintEnd_toStartOf="@+id/tvFirstName"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tvClassName"
         android:layout_width="wrap_content"
@@ -47,7 +43,4 @@
         android:text="יא6"
         app:layout_constraintEnd_toStartOf="@+id/tvLastName"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

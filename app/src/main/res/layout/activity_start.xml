@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity"
     android:orientation="vertical">
-
     <ImageView
         android:layout_width="240dp"
         android:layout_height="130dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:src="@drawable/oded_symbol"/>
-
     <TextView
         android:layout_width="370dp"
         android:layout_height="65dp"
@@ -23,7 +21,6 @@
         android:gravity="center"
         android:textColor="#000000"
         android:layout_marginTop="10dp"/>
-
     <TextView
         android:layout_width="370dp"
         android:layout_height="54dp"
@@ -33,7 +30,6 @@
         android:gravity="center"
         android:textColor="#000000"
         android:layout_marginTop="30dp"/>
-
     <TextView
         android:layout_width="380dp"
         android:layout_height="30dp"
@@ -41,10 +37,5 @@
         android:textSize="16dp"
         android:text="(ניתן לראות אותן רק כאשר יום הבחירות נגמר)"
         android:gravity="center"
-        android:textColor="#000000"
-        />
-
-
-
-
+        android:textColor="#000000" />
 </LinearLayout>
