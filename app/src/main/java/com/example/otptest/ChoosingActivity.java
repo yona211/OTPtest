@@ -127,7 +127,6 @@ public class ChoosingActivity extends AppCompatActivity implements View.OnClickL
         competitorAdapter = new CompetitorAdapter(ChoosingActivity.this, 0, 0, competitorsList);
         lv.setAdapter(competitorAdapter);
     }
-
     public String createMakeChoiceDialog(String FirstName, String LastName, String Id, Bitmap bitmap)
     {
         String name = FirstName + " " + LastName;
@@ -172,6 +171,4 @@ public class ChoosingActivity extends AppCompatActivity implements View.OnClickL
      */
     @Override
     public void onBackPressed(){}
-
-
 }

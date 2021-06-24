@@ -47,11 +47,10 @@ public class ServerConnectionService extends Service {
         return binder;
     }
 
-
     class connectSocket implements Runnable {
         @Override
         public void run() {
-            SocketAddress socketAddress = new InetSocketAddress("192.168.1.12", 5555);
+            SocketAddress socketAddress = new InetSocketAddress("192.168.1.12", 5556);
             try {
                 s.connect(socketAddress);
                 dos = new DataOutputStream(s.getOutputStream());
@@ -70,6 +69,48 @@ public class ServerConnectionService extends Service {
         }
     }
 
+    /*class connectSocketPicture implements Runnable {
+
+        @Override
+        public void run() {
+            Log.d("PICTURE", "5");
+            String response = "s";
+            String filename = "test1111.jpg";
+            System.out.println("Requested File: " + filename);
+            SocketAddress socketAddress = new InetSocketAddress("192.168.1.12", 5556);
+            try {
+                s.connect(socketAddress);
+                dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF(msgToSend);
+                disR = new InputStreamReader(dis);
+                dis = new DataInputStream(s.getInputStream());
+
+                FileInputStream fis;
+                BufferedInputStream bis;
+                BufferedOutputStream out;
+                byte[] buffer = new byte[8192];
+                try {
+                    out = new BufferedOutputStream(s.getOutputStream());
+                    int count;
+                    while ((count = bis.read(buffer)) > 0) {
+                        out.write(buffer, 0, count);
+
+                    }
+                    out.close();
+                    bis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                dis.close();
+                s.close();
+
+            } catch (IOException e) {
+                Log.d("ServerConn", "catch run: " + e.getMessage());
+            }
+        }
+    }*/
+
     /**
      * This function is the actual way we can talk with the server.
      * It's make an object of the connectSocket class witch is a class that make the socket level connection
@@ -87,7 +128,7 @@ public class ServerConnectionService extends Service {
         s = new Socket();
         Runnable connect = new connectSocket();
         new Thread(connect).start();
-        while(isRun && lifeTime > 0)
+        while (isRun && lifeTime > 0)
         {
             try {
                 Thread.sleep(1000);
@@ -97,11 +138,10 @@ public class ServerConnectionService extends Service {
             }
         }
         stopSelf();
-        if(serverReturns != null) {
+        if (serverReturns != null) {
             return serverReturns;
         }
         return "Server return's nothing";
-
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.example.otptest;
+    package com.example.otptest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,9 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -39,7 +41,11 @@ public class WinnersActivity extends AppCompatActivity {
             final String msgToSend = "WINNERS" + " j";
             s2 = String.valueOf(mService.getServerReturns(msgToSend));
             Log.d("WinnersT", "s2: " + s2);
-            setListView(s2);
+            if(s2.equals("n")) {
+                Toast.makeText(WinnersActivity.this, "You can't see the results now, please wait.", Toast.LENGTH_SHORT).show();
+            } else {
+                setListView(s2);
+            }
         }
 
         @Override
